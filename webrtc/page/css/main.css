@@ -195,6 +195,32 @@ video.overlay {
     height: 49px;
     background: url(../img/icons/action.png) 0 0 no-repeat;
 }
+
+#chat-toggle, #hdr-toggle {
+    position: absolute;
+    display: inline-block;
+}
+#chat-toggle {
+    top: 88px;
+    left: -65px;
+    width: 49px;
+    height: 49px;
+    background: url(../img/icons/chats.png) 0 0 no-repeat;
+}
+
+#code-toggle, #hdr-toggle {
+    position: absolute;
+    display: inline-block;
+}
+
+#code-toggle {
+    top: 158px;
+    left: -65px;
+    width: 49px;
+    height: 49px;
+    background: url(../img/icons/code.png) 0 0 no-repeat;
+}
+
 #hdr-toggle {
     top: 145px;
     width: 91px;

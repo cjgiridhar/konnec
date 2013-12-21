@@ -21,7 +21,7 @@ body {
 a.miniColors-trigger {
   margin-top: 10px;
   display: block;
-  float: right;
+  float: left;
 }
 #color-picker {
   display: none;
