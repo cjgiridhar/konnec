@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  		<title>ICE-Breaker | WebRTC Based Conferencing</title>
+  		<meta name="description" content="">
+  		<meta name="viewport" content="width=device-width">
+
+  		<link rel="stylesheet" href="page/css/normalize.min.css">
+  		<link rel="stylesheet" href="page/css/main.css">
+
+  		<script src="page/js/vendor/modernizr-2.6.2.min.js"></script>
+  		<script>
+    		var room = "#{ params.room }";
+    		var initCall = "#{ room_count > 0 }";
+  		</script>
+    </head>
+
+    <body>
+
+    <div id="viewport">
+    	<header id="ice-header">
+      		<!--a id="hdr-toggle" href="#hdr"></a-->
+      			
+      		<div class="circles people">
+        	<a href="#" class="speaker-1" ></a>
+        	<a href="#" class="speaker-2" ></a>
+      	</div>
+      	<div class="meet-info">
+        	<div id="com-title">JSfoo Bangalore</div>
+        	<div id="com-sharer">Sharer's Desktop</div>
+      	</div>
+      	<div class="circles action top">
+        	<a href="#call-phone" class="call-phone"></a>
+        	<!--a href="#share-screen" class="share-screen"></a-->
+        	<a href="#web-cam" class="web-cam"></a>
+        	<a href="#share-folder" class="share-folder"></a>
+      	</div>
+     	</header>
+
+
+      	<section id="main">	
+      
+      		<video id="main-video"></video>
+      		<div class="circles action main">
+        		<a id="localmute" class="mic"></a>
+        		<!-- a href="#tag" class="tag"></a -->
+        		<!-- a href="#record" class="record"></a -->
+        		<a id="disconnect" class="disconnect"></a>
+        		<!--a href="#call-phone" class="call-phone"></a-->
+        		<a id="screenShare"  class="share-screen" ></a>
+        		<!--a href="#web-cam" class="web-cam"></a-->
+        		<!--a href="#share-folder" class="share-folder"></a-->
+      		</div>
+
+      		<video id="overlay-video"></video>
+
+      		<!-- Pre-Video controls -->
+      		<div class="c2a">
+        		<a id="c2a-toggle" href="#c2a"></a>
+        	<form>
+          		<label>Call to Action</label>
+          		<div>
+            		<input id="member-name" placeholder="Members Name" />
+          		</div>
+          		<div>
+            		<textarea id="member-notes" placeholder="Call to action notes" cols="35"></textarea>
+          		</div>
+        	</form>
+        	
+        	<div class="separator">
+          		<button id="add-action"></button>
+        	</div>
+        
+        	<div class="action-item">
+          		<div class="name">Samuel Jackson</div>
+          		<div class="action">HTML5 is really awesome! Did you check on that?</div>
+        	</div>
+        
+        	<div class="separator"> </div>
+       		</div>
+
+       	</section>
+
+	</div>
+		
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <h1 id="title">Start a room</h1>
+        <style>
+            #remotes video {
+                height: 150px;
+            }
+        </style>
+        <button id="screenShareButton"></button>
+        <button id="pauseVideo"></button>
+		<!-- button id="endCall"></button-->
+        <p id="subTitle"></p>
+        <form id="createRoom">
+            <input id="sessionInput"/>
+            <button type="submit">Create it!</button>
+        </form>
+        <!--video id="localVideo" style="height: 150px;"></video-->
+		<div id='controls'></div>
+        <div id="remotes"></div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="socket.io.js"></script>
+        <script src="simplewebrtc.bundle.js"></script>
+        <script>
+            // grab the room from the URL
+            var room = location.search && location.search.split('?')[1];
+
+            // create our webrtc connection
+            var webrtc = new SimpleWebRTC({
+                // the id/element dom element that will hold "our" video
+                localVideoEl: 'main-video',
+                // the id/element dom element that will hold remote videos
+                remoteVideosEl: 'remotes',
+                // immediately ask for camera access
+                autoRequestMedia: true,
+                debug: true,
+                detectSpeakingEvents: true,
+                autoAdjustMic: false
+            });
+
+            // when it's ready, join if we got a room from the URL
+            webrtc.on('readyToCall', function () {
+                // you can name it anything
+                if (room) webrtc.joinRoom(room);
+            });
+            
+            // Since we use this twice we put it here
+            function setRoom(name) {
+                $('form').remove();
+                $('h1').text(name);
+                $('#subTitle').text('Link to join: ' + location.href);
+                $('body').addClass('active');
+            }
+
+            if (room) {
+                setRoom(room);
+            } else {
+                $('form').submit(function () {
+                    var val = $('#sessionInput').val().toLowerCase().replace(/\s/g, '-').replace(/[^A-Za-z0-9_\-]/g, '');
+                    webrtc.createRoom(val, function (err, name) {
+                        console.log(' create room cb', arguments);
+                    
+                        var newUrl = location.pathname + '?' + name;
+                        if (!err) {
+                            history.replaceState({foo: 'bar'}, null, newUrl);
+                            setRoom(name);
+                        } else {
+                            console.log(err);
+                        }
+                    });
+                    return false;          
+                });
+            }
+
+
+            var button = $('#screenShareButton'),
+                setButton = function (bool) {
+                    button.text(bool ? 'share screen' : 'stop sharing');
+                };
+
+            setButton(true);
+
+            button.click(function () {
+                if (webrtc.getLocalScreen()) {
+                    webrtc.stopScreenShare();
+                    setButton(true);
+                } else {
+                    webrtc.shareScreen(function (err) {
+                        if (err) {
+                            setButton(true);
+                        } else {
+                            setButton(false);
+                        }
+                    });
+                    
+                }
+            });
+
+            var endbutton = $('#endCall'),
+                setEndButton = function (bool) {
+                    endbutton.text(bool ? 'stay' : 'leave');
+                };
+
+            setEndButton(false);
+
+            endbutton.click(function () {
+                alert("Clicked on leave meeting");
+				webrtc.stopScreenShare();
+				webrtc.leaveRoom();
+				$('#main-video').remove();
+            });
+
+			$("#disconnect").on("click", function () {
+                alert("Clicked on leave meeting");
+				webrtc.stopScreenShare();
+				webrtc.leaveRoom();
+				$('#main-video').remove();
+            });
+
+			$("#screenShare").on("click", function() {
+				alert("Sharing your screen");
+				webrtc.shareScreen();
+			});		
+
+	    var pausebutton = $('#pauseVideo'),
+		setPauseButton = function (bool) {
+			pausebutton.text(bool ? 'pause' : 'resume');
+		};
+
+	    setPauseButton(true);
+
+	    pausebutton.click(function() {
+			console.log(webrtc.isVideo())
+			//if(webrtc.isVideo()) {
+				//webrtc.pause();
+				//setPauseButton(false);
+			//} else {
+			//	webrtc.resumeVideo();
+			//	setPauseButton(true);
+			//}
+	    });
+
+
+        </script>
+    </body>
+</html>

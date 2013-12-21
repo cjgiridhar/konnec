@@ -1,0 +1,69 @@
+body {
+  background: url('../images/classy_fabric.png');
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+
+#wrap {
+  margin: 0px auto;
+  width: 700px;
+}
+#drawzone {
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 10px #000;
+  display: block;
+  border-radius: 5px;
+}
+
+a.miniColors-trigger {
+  margin-top: 10px;
+  display: block;
+  float: right;
+}
+#color-picker {
+  display: none;
+}
+
+#people-online {
+  padding: 5px;
+  color: #FFF;
+  font-family: helvetica;
+  font-size: 11px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  border-top: 1px solid #111;
+}
+
+#footer .inner {
+  padding: 10px;
+  color: #FFF;
+  font-family: helvetica;
+  font-size: 11px;
+}
+
+#footer .inner span {
+  line-height: 22px;
+}
+
+a, a:active, a:visited {
+  color: #2c8aff !important;
+}
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.cl {
+  clear: both;
+}
