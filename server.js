@@ -169,6 +169,7 @@ function sendLine(data) {
 //https.createServer({key: privateKey, cert: certificate}, app).listen(8000);
 //http.createServer(app).listen(8001);
 var port = process.env.PORT || 3000;
+console.log( port );
 server.listen(port);
 //console.log('running on https://localhost:8000 and http://localhost:8001');
 
