@@ -131,9 +131,14 @@ div, a, span, video, #ice-header {
 /* .main-video { -webkit-mask-image: url(http://f.cl.ly/items/1e181Q0e3j0L3L3z2j3Z/rect.svg) } */
 
 
-/*
-#main { position: relative; height: 100%; }
-*/
+
+
+/* #remotes video {
+            	width: 250px;
+            }*/
+
+/*#remotes { position: relative; height: 100%; }*/
+
 video {
     position: absolute;
     width: 1280px;
