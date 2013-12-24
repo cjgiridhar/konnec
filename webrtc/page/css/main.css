@@ -127,8 +127,8 @@ div, a, span, video, #ice-header {
 .circles a.record { background: url(../img/icons/record.png) 0 0 no-repeat; }
 .circles a.disconnect { background: url(../img/icons/disconnect.png) 0 0 no-repeat; }
 .circles a.invite { background: url(../img/icons/invite.png) 0 0 no-repeat; }
-
-/* .main-video { -webkit-mask-image: url(http://f.cl.ly/items/1e181Q0e3j0L3L3z2j3Z/rect.svg) } */
+/*.circles a.mainvideo {  -webkit-mask-image: url(http://f.cl.ly/items/1e181Q0e3j0L3L3z2j3Z/rect.svg) } */
+ .main-video { -webkit-mask-image: url(http://f.cl.ly/items/1e181Q0e3j0L3L3z2j3Z/rect.svg) } 
 
 
 
@@ -154,7 +154,7 @@ video.overlay {
     z-index: 5;
 }
 
-#main:hover > .action.main {
+#main > .action.main {
     opacity: 1;
     visibility: visible;
 }

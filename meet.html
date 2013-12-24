@@ -102,7 +102,8 @@
 
     <body>
     <div id="remotes"></div>
-	<div id="main-video"></div>
+    <div id="main-video" class="mainvideo"></div>
+	
     <div id="viewport">
     	
 		<!--div id='controls'></div-->
@@ -125,17 +126,19 @@
         	<div id="remotes"></div-->
       		
       		<div id="menu" class="circles action main">
+      			
         		<a id="localmute" class="mic"></a>
         		<a id="localunmute" class="micmute"></a>
-        		<!--a href="#tag" class="tag"></a-->
-        		<!-- a href="#record" class="record"></a -->
-        		<a id="connect" class="call-phone"></a>
-        		<a id="screenShareStop"  class="share-screenstop" ></a>
-        		<a id="screenShare"  class="share-screen" ></a>
-        		<a id="disconnect" class="disconnect"></a>
         		<a id="web-cam" class="web-cam"></a>
         		<a id="web-camstop" class="web-camstop"></a>
-        		<a id="invite" class="invite"></a>
+        		<!--a href="#tag" class="tag"></a-->
+        		<!-- a href="#record" class="record"></a -->
+        		
+        		<a id="screenShareStop"  class="share-screenstop" ></a>
+        		<a id="screenShare"  class="share-screen" ></a>
+        		<a id="connect" class="call-phone"></a>
+        		<a id="disconnect" class="disconnect"></a>
+        		<!--a id="invite" class="invite"></a-->
         		<!--a href="#share-folder" class="share-folder"></a-->
       		</div>
 			
@@ -185,10 +188,14 @@
             /*#main-video video {
                 height: 150px;
             }*/
+
             #main-video video {
-            	height: 250px;
-            	width: 250px;	
-            }	
+            	height: 200px;
+            	width: 250px;
+   				border: 2px solid white;
+   				
+            }
+            	
     </style>
         
         <!--p id="subTitle"></p>
