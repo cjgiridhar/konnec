@@ -306,7 +306,7 @@
                 //alert("Clicked on leave meeting");
 				webrtc.stopScreenShare();
 				webrtc.leaveRoom();
-				$('#main-video').hide();
+				$('#remotes').hide();
 				$("#disconnect").hide();
 				$('#connect').show();
             });
@@ -315,13 +315,13 @@
                 //alert("Clicked on leave meeting");
 				//webrtc.stopScreenShare();
 				//webrtc.leaveRoom();
-				$('#main-video').show();
-				$("#disconnect").show();
-				$("#connect").hide();	
+				//$('#main-video').show();
+				location.reload();
             });
 
 			$("#screenShare").on("click", function() {
 				//alert("Sharing your screen");
+				$('#remotes').hide();
 				webrtc.shareScreen();
 				$("#screenShare").hide();
 				$("#screenShareStop").show();
@@ -330,6 +330,7 @@
 			$("#screenShareStop").on("click", function() {
 				//alert("Sharing your screen");
 				webrtc.stopScreenShare();
+				$('#remotes').show();
 				$("#screenShareStop").hide();
 				$("#screenShare").show();
 			});				
