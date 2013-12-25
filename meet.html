@@ -321,8 +321,8 @@
 
 			$("#screenShare").on("click", function() {
 				//alert("Sharing your screen");
-				$('#remotes').hide();
 				webrtc.shareScreen();
+				$('#remotes').hide();
 				$("#screenShare").hide();
 				$("#screenShareStop").show();
 			});	

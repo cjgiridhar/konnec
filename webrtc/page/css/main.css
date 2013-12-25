@@ -198,7 +198,7 @@ video.overlay {
     left: -65px;
     width: 49px;
     height: 49px;
-    background: url(../img/icons/action.png) 0 0 no-repeat;
+    background: url(../img/icons/whiteboard.png) 0 0 no-repeat;
 }
 
 #chat-toggle, #hdr-toggle {
