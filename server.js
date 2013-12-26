@@ -1,11 +1,16 @@
 var express = require('express');
 var app = express();
-//var server = require('http').createServer(app);
 var fs = require('fs');
-var privateKey = fs.readFileSync('fakekeys/server.key').toString(),
-    certificate = fs.readFileSync('fakekeys/server.crt').toString();
+
+//var privateKey = fs.readFileSync('fakekeys/server.key').toString(),
+//    certificate = fs.readFileSync('fakekeys/server.crt').toString();
+
+//var privateKey = fs.readFileSync('fakekeys/privatekey.pem').toString(),
+//    certificate = fs.readFileSync('fakekeys/certificate.pem').toString();
+
 //var server = require('https').createServer({key: privateKey, cert: certificate}, app);
 var server = require('http').createServer(app); 
+
 var socket = require('socket.io');
 var io = socket.listen(server);
 var peopleOnline = 0;
