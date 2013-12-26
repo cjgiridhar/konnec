@@ -197,9 +197,9 @@ video.overlay {
 #c2a-toggle {
     top: 105px;
     left: -105px;
-    width: 66px;
-    height: 66px;
-    background: url(../img/icons/wb.png) 0 0 no-repeat;
+    width: 60px;
+    height: 60px;
+    background: url(../img/icons/wboard.png) 0 0 no-repeat;
     border: 2px solid #fff;
 }
 
@@ -210,8 +210,8 @@ video.overlay {
 #chat-toggle {
     top: 190px;
     left: -105px;
-    width: 66px;
-    height: 66px;
+    width: 60px;
+    height: 60px;
     background: url(../img/icons/chats.png) 0 0 no-repeat;
 }
 
@@ -223,8 +223,8 @@ video.overlay {
 #code-toggle {
     top: 275px;
     left: -105px;
-    width: 66px;
-    height: 66px;
+    width: 60px;
+    height: 60px;
     background: url(../img/icons/code.png) 0 0 no-repeat;
 }
 

@@ -165,6 +165,24 @@ function sendLine(data) {
 }
 
 
+///////////////////////////// Code share
+
+sharejs = require('share').server;
+var options = {db:{type:'none'}}; // See docs for options. {type: 'redis'} to enable     persistance.
+
+// Attach the sharejs REST and Socket.io interfaces to the server
+sharejs.attach(app, options);
+
+app.use(app.router);
+
+app.set('views', __dirname + '/share/views');
+app.engine('html', require('ejs').renderFile);
+app.get('/share', function(req, res) {
+    res.render('share.html');
+});
+
+
+
 // silly chrome wants SSL to do screensharing
 
 //https.createServer({key: privateKey, cert: certificate}, app).listen(8000);
