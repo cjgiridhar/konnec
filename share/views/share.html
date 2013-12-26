@@ -11,7 +11,7 @@
         $(document).ready(function() {
             var editor = ace.edit("editor");
 
-            sharejs.open('hello', 'text', 'http://localhost:8000/channel', function (error, doc) {
+            sharejs.open('hello', 'text', 'https://hidden-tundra-8572.herokuapp.com/channel', function (error, doc) {
                 doc.attach_ace(editor);
             });
         });
@@ -19,8 +19,8 @@
     <style>
         #editor {
   	    position: absolute;
-    	    top: 10%;
-    	    left: 25%;
+    	    top: 15%;
+    	    left:5%;
     	    /*margin-top: -50px;
     	    margin-left: -50px;*/
             width: 600px;
@@ -31,7 +31,7 @@
     </style>
 </head>
     <body>
-        <h1>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Online Code Review</h1>
+        <h1>Online Code Review</h1><br /> <br /><br />
         <div id="editor">
 	</div>
     </body>
