@@ -3,8 +3,7 @@
 <head>
     <title>Code Review</title>
     <!--script src="https://raw.github.com/ExactTarget/fuelux/master/lib/require.js"></script-->
-    <script src="//ajaxorg.github.com/ace/build/src/ace.js"></script>
-    <!--script src="//ajaxorg/ace/master/build/src/ace.js"</script-->
+    <script src="https://ajaxorg.github.io/ace/build/src/ace.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="/channel/bcsocket.js"></script>
     <script src="/share/share.js"></script>
@@ -13,7 +12,7 @@
         $(document).ready(function() {
             var editor = ace.edit("editor");
 
-            sharejs.open('hello', 'text', 'http://hidden-tundra-8572.herokuapp.com/channel', function (error, doc) {
+            sharejs.open('hello', 'text', 'https://hidden-tundra-8572.herokuapp.com/channel', function (error, doc) {
                 doc.attach_ace(editor);
             });
         });
