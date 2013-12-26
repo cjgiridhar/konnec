@@ -180,7 +180,7 @@ sharejs.attach(app, options);
 
 app.use(app.router);
 
-app.set('views', __dirname + '/share/views');
+app.set('views', __dirname + '/chats/views');
 app.engine('html', require('ejs').renderFile);
 app.get('/share', function(req, res) {
     res.render('share.html');
