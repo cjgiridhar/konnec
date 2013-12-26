@@ -99,7 +99,7 @@ div, a, span, video, #ice-header {
 .circles.action.top { position: absolute; top: 20px; right: 20px; }
 .circles.action.main { bottom: 40px; left: 50%; margin-left: -222px; opacity: 0; visibility: hidden; }
 .circles.action.top a { width: 80px; height: 80px; }
-.circles.action.main a { width: 88px; height: 88px; }
+.circles.action.main a { width: 66px; height: 66px; }
 .circles.people a { width: 92px; height: 92px; vertical-align: bottom; }
 
 .circles a {
@@ -107,7 +107,7 @@ div, a, span, video, #ice-header {
     text-decoration: none;
     border: 5px solid #fff;
     border-radius: 80px;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .circles a:hover { border-color: rgba(55, 236, 142, 0.8); }
@@ -141,7 +141,7 @@ div, a, span, video, #ice-header {
 
 #remotes video{
     position: absolute;
-    width: 1280px;
+    width: 100%;
 }
 
 video.overlay {
@@ -160,18 +160,19 @@ video.overlay {
 }
 
 .c2a {
-    width: 275px;
+    width: 0px;
     height: 100%;
+    padding-left: 0px;
     top: 0;
     right: 0;
     color: #fff;
     font-size: 1.2em;
-    background-color: #72b1e1;
-    border-left: 1px solid #5298CE;
+    background-color: #fff;
+    border-left: 1px solid #fff;
     position: absolute;
-    right: -275px;
-    z-index: 15;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    right: 0px;
+    /*z-index: 15;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);*/
 }
 
 .c2a.highlight {
@@ -194,11 +195,12 @@ video.overlay {
     display: inline-block;
 }
 #c2a-toggle {
-    top: 18px;
-    left: -65px;
-    width: 49px;
-    height: 49px;
-    background: url(../img/icons/whiteboard.png) 0 0 no-repeat;
+    top: 105px;
+    left: -105px;
+    width: 66px;
+    height: 66px;
+    background: url(../img/icons/wb.png) 0 0 no-repeat;
+    border: 2px solid #fff;
 }
 
 #chat-toggle, #hdr-toggle {
@@ -206,10 +208,10 @@ video.overlay {
     display: inline-block;
 }
 #chat-toggle {
-    top: 88px;
-    left: -65px;
-    width: 49px;
-    height: 49px;
+    top: 190px;
+    left: -105px;
+    width: 66px;
+    height: 66px;
     background: url(../img/icons/chats.png) 0 0 no-repeat;
 }
 
@@ -219,10 +221,10 @@ video.overlay {
 }
 
 #code-toggle {
-    top: 158px;
-    left: -65px;
-    width: 49px;
-    height: 49px;
+    top: 275px;
+    left: -105px;
+    width: 66px;
+    height: 66px;
     background: url(../img/icons/code.png) 0 0 no-repeat;
 }
 
