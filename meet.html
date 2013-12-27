@@ -101,11 +101,11 @@
 
     </head>
 
-    <body>
+    <body background="webrtc/page/img/icons/people.png" bgcolor="#333333">
     <div id="remotes"></div>
     <div id="main-video" class="mainvideo"></div>
 	
-    <div id="viewport">
+    <div id="viewport" background="webrtc/page/img/icons/people.png" bgcolor="#333333">
     	
 		<!--div id='controls'></div-->
     	<header id="ice-header">
@@ -137,10 +137,11 @@
         		
         		<a id="screenShareStop"  class="share-screenstop" ></a>
         		<a id="screenShare"  class="share-screen" ></a>
-        		<a id="connect" class="call-phone"></a>
+        		
         		<a id="fullscreen" class="fullscreen"></a>
         		<a id="capture" class="capture"></a>
         		<a id="disconnect" class="disconnect"></a>
+        		<a id="connect" class="call-phone"></a>
         		
         		<!--a id="invite" class="invite"></a-->
         		<!--a href="#share-folder" class="share-folder"></a-->
@@ -195,7 +196,7 @@
 
             #main-video video {
             	height: 200px;
-            	width: 250px;
+            	width: 260px;
    				border: 2px solid white;
    				
             }
@@ -327,6 +328,7 @@
 				webrtc.stopScreenShare();
 				webrtc.leaveRoom();
 				$('#remotes').hide();
+				$('#main-video').hide();
 				$("#disconnect").hide();
 				$('#connect').show();
             });

@@ -75,7 +75,7 @@ div, a, span, video, #ice-header {
 #viewport {
     width: 1024px;
     margin: 0 auto;
-    background: #fff;
+   
     height: 400px;
     overflow: hidden;
 }
@@ -108,7 +108,7 @@ div, a, span, video, #ice-header {
     text-decoration: none;
     border: 5px solid #fff;
     border-radius: 80px;
-    margin-left: 15px;
+    margin-left: 8px;
 }
 
 .circles a { border-color:#fff; }
@@ -142,6 +142,7 @@ div, a, span, video, #ice-header {
             }*/
 
 /*#remotes { position: relative; height: 100%; }*/
+
 
 #remotes video{
     position: absolute;
