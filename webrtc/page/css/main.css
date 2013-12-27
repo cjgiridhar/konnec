@@ -144,10 +144,10 @@ div, a, span, video, #ice-header {
 /*#remotes { position: relative; height: 100%; }*/
 
 
-#remotes video{
+/*#remotes video{
     position: absolute;
     width: 100%;
-}
+}*/
 
 video.overlay {
     width: 180px;
