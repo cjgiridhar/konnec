@@ -136,6 +136,10 @@ app.get('/board', function (req, res) {
   res.sendfile(__dirname + '/board/index.html');
 });
 
+app.get('/meet', function (req, res) {
+  res.sendfile(__dirname + '/meet.html');
+});
+
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
 });
