@@ -19,6 +19,7 @@ body {
     font-size: 0.8em;
     line-height: 1.4;
     background-color: #fff;
+    height: 800px;
 }
 
 ::-moz-selection {
@@ -75,7 +76,7 @@ div, a, span, video, #ice-header {
     width: 1024px;
     margin: 0 auto;
     background: #fff;
-    height: 100%;
+    height: 400px;
     overflow: hidden;
 }
 
@@ -85,7 +86,7 @@ div, a, span, video, #ice-header {
     border-bottom: 1px solid #c1c1c1; 
     z-index: 10;
     background-color: #fff;
-    top: -127px;
+    top: 0px;
 }
 #ice-header > div { display: inline-block; }
 .people { width: 230px; }
@@ -110,7 +111,8 @@ div, a, span, video, #ice-header {
     margin-left: 15px;
 }
 
-.circles a:hover { border-color: rgba(55, 236, 142, 0.8); }
+.circles a { border-color:#fff; }
+/*.circles a { border-color: rgb(200, 54, 54, 0.8); }*/
 .circles a:active { box-shadow: 0 0 10px rgba(75, 51, 51, 0.41) inset; }
 
 .circles a.speaker-1 { background: url(../img/people/speaker_01.png) 0 0 no-repeat; }
@@ -127,6 +129,8 @@ div, a, span, video, #ice-header {
 .circles a.record { background: url(../img/icons/record.png) 0 0 no-repeat; }
 .circles a.disconnect { background: url(../img/icons/disconnect.png) 0 0 no-repeat; }
 .circles a.invite { background: url(../img/icons/invite.png) 0 0 no-repeat; }
+.circles a.fullscreen { background: url(../img/icons/fullscreen.png) 0 0 no-repeat; }
+.circles a.capture { background: url(../img/icons/invite.jpg) 0 0 no-repeat; }
 /*.circles a.mainvideo {  -webkit-mask-image: url(http://f.cl.ly/items/1e181Q0e3j0L3L3z2j3Z/rect.svg) } */
  .main-video { -webkit-mask-image: url(http://f.cl.ly/items/1e181Q0e3j0L3L3z2j3Z/rect.svg) } 
 
@@ -150,7 +154,7 @@ video.overlay {
     z-index: 10;
     border-radius: 3px;
     right: 50px;
-    bottom: 50px;
+    bottom: 250px;
     z-index: 5;
 }
 
@@ -199,7 +203,7 @@ video.overlay {
     left: -105px;
     width: 60px;
     height: 60px;
-    background: url(../img/icons/wboard.png) 0 0 no-repeat;
+    background: url(../img/icons/wbboard.png) 0 0 no-repeat;
     border: 2px solid #fff;
 }
 
@@ -213,6 +217,7 @@ video.overlay {
     width: 60px;
     height: 60px;
     background: url(../img/icons/chats.png) 0 0 no-repeat;
+    border: 2px solid #fff;
 }
 
 #code-toggle, #hdr-toggle {
@@ -226,6 +231,7 @@ video.overlay {
     width: 60px;
     height: 60px;
     background: url(../img/icons/code.png) 0 0 no-repeat;
+    border: 2px solid #fff;
 }
 
 #hdr-toggle {

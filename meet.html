@@ -10,6 +10,7 @@
 
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/screenfull.js/1.0.4/screenfull.min.js"></script>
 		<script>
     
     	;(function($) {
@@ -137,7 +138,10 @@
         		<a id="screenShareStop"  class="share-screenstop" ></a>
         		<a id="screenShare"  class="share-screen" ></a>
         		<a id="connect" class="call-phone"></a>
+        		<a id="fullscreen" class="fullscreen"></a>
+        		<a id="capture" class="capture"></a>
         		<a id="disconnect" class="disconnect"></a>
+        		
         		<!--a id="invite" class="invite"></a-->
         		<!--a href="#share-folder" class="share-folder"></a-->
       		</div>
@@ -209,10 +213,26 @@
     <script src="webrtc/socket.io.js"></script>
     <script src="webrtc/simplewebrtc.bundle.js"></script>
     <script>
+    		function copyToClipboard(text) {
+ 			 	window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+			}
         	$('#localunmute').hide();
         	$("#screenShareStop").hide();
         	$('#connect').hide();
+			$('#web-cam').hide();
         	$('#web-camstop').hide();
+        	
+        	$('#fullscreen').click(function () {
+    			if (screenfull.enabled) {
+        			screenfull.request();
+    			}
+			});
+			
+			$('#capture').click(function () {	
+				copyToClipboard(document.URL);
+			});			
+			
+        	        	
             // grab the room from the URL
             var room = location.search && location.search.split('?')[1];
 

@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var fs = require('fs');
+var webshot = require('webshot');
 
 //var privateKey = fs.readFileSync('fakekeys/server.key').toString(),
 //    certificate = fs.readFileSync('fakekeys/server.crt').toString();
@@ -186,8 +187,13 @@ app.get('/share', function(req, res) {
     res.render('share.html');
 });
 
+/////Screenshot
 
-
+app.get('/capture', function(req, res) {	
+				webshot('google.com', 'google.png', function(err) {
+  					// screenshot now saved to google.png
+				});
+});				
 // silly chrome wants SSL to do screensharing
 
 //https.createServer({key: privateKey, cert: certificate}, app).listen(8000);
