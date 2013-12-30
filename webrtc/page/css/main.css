@@ -235,6 +235,16 @@ video.overlay {
     border: 2px solid #fff;
 }
 
+#file-toggle {
+    top: 360px;
+    left: -105px;
+    width: 60px;
+    height: 60px;
+    background: url(../img/icons/code.png) 0 0 no-repeat;
+    border: 2px solid #fff;
+}
+
+
 #hdr-toggle {
     top: 145px;
     width: 91px;

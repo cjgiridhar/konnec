@@ -84,6 +84,29 @@
 
     })(jQuery);   
     
+
+    ;(function($) {
+
+         // DOM Ready
+        $(function() {
+
+            // Binding a click event
+            // From jQuery v.1.7.0 use .on() instead of .bind()
+            $('#file-toggle').on('click', function(e) {
+
+                // Prevents the default action to be triggered.
+                e.preventDefault();
+
+                // Triggering bPopup when click event is fired
+                $('#element_to_pop_up_file').bPopup();
+
+            });
+
+        });
+
+    })(jQuery);
+
+
  </script>
  
  		<script src="webrtc/page/js/jquery.bpopup.min.js"></script>
@@ -179,6 +202,11 @@
 			<iframe src="https://hidden-tundra-8572.herokuapp.com/share" width="100%" height="500"> </iframe>
     		<a class="b-close">x</a>
 			</div>			
+
+                        <div id="element_to_pop_up_file" style="display:none; width:800px; height:500px">
+                        <iframe src="https://quiet-reef-7929.herokuapp.com/" width="100%" height="500"> </iframe>
+                <a class="b-close">x</a>
+                        </div>
 			
        	</section>
 
@@ -460,6 +488,23 @@
     	position:absolute;
     	right:10px;
     	top:5px;
+    }
+
+
+    #element_to_pop_up_file {
+        background-color:#fff;
+        border-radius:15px;
+        color:#000;
+        display:none;
+        padding:20px;
+        min-width:400px;
+        min-height: 180px;
+    }
+    .b-close-file {
+        cursor:pointer;
+        position:absolute;
+        right:10px;
+        top:5px;
     }
 
 	</style>
