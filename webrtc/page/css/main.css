@@ -244,6 +244,11 @@ video.overlay {
     border: 2px solid #fff;
 }
 
+#file-toggle, #hdr-toggle {
+    position: absolute;
+    display: inline-block;
+}
+
 
 #hdr-toggle {
     top: 145px;
