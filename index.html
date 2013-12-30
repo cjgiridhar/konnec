@@ -176,7 +176,7 @@
 					style="background: white; border: 1px double #DDD; border-radius: 5px; box-shadow: 0 0 5px #333;
 						   color: #666; float: center; padding: 5px 10px; width: 250px; height: 30px; outline: none;">
 						
-					<a class="button_example" id="baseUrl" href="https://hidden-tundra-8572.herokuapp.com/meet.html">Go!</a>
+					<a class="button_example" id="baseUrl" href="http://localhost:3000/meet.html">Go!</a>
 					<script>
 						$(function() {
     						$('#baseUrl').click( function() {
@@ -425,4 +425,12 @@
 			</div>
 		</footer>
 	</body>
+		<script>
+	var is_chrome = /chrome/i.test( navigator.userAgent );
+   	if(is_chrome === true) {
+   	}
+   	else {
+   		alert("Looks like you are not chromium.. Please switch to chromium for all functionalities");
+   	} 	
+	</script>
 </html>
